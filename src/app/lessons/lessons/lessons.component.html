@@ -1,0 +1,66 @@
+<div class="container">
+  <div class="row">
+    <div class="col s12">
+      <div class="header"><h1>Курс: Angular 10+ Базовые знания</h1></div>
+      <nav>
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo">Список уроков курса</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li>
+              <a
+                mat-button
+                (click)="openAddDialog()"
+                class="waves-effect waves-light btn"
+                ><i class="material-icons left">add_box</i>Добавить</a
+              >
+            </li>
+            <!-- <li>
+              <a
+                mat-button
+                (click)="openEditDialog()"
+                class="waves-effect waves-light btn"
+                ><i class="material-icons left">edit</i>Редактировать</a
+              >
+            </li>
+            <li>
+              <a href="" class="waves-effect waves-light btn btn-red"
+                ><i class="material-icons left">delete_forever</i>Удалить</a
+              >
+            </li> -->
+          </ul>
+        </div>
+      </nav>
+      <table class="highlight">
+        <thead>
+          <tr>
+            <th>Номер</th>
+            <th>Дата</th>
+            <th>Тема</th>
+            <th>Домашняя работа</th>
+            <th>Примечание</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let lesson of lessons" (click)="openEditDialog()">
+            <td>{{ lesson.lessonNumber }}</td>
+            <td>{{ lesson.lessonDate | date: "dd.MM.yyyy" }}</td>
+            <td>{{ lesson.lessonTheme }}</td>
+            <td>{{ lesson.lessonHomework }}</td>
+            <td>{{ lesson.lessonNote }}</td>
+            <td>
+              <a
+                mat-button
+                (click)="openEditDialog(lesson)"
+                class="waves-effect waves-light btn"
+                ><i class="material-icons left">edit</i></a
+              >
+              <a href="" class="waves-effect waves-light btn btn-red"
+              ><i class="material-icons left">delete_forever</i></a
+            >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
